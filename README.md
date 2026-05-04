@@ -4,6 +4,8 @@
 
 公開URL: https://bazaarjapan.github.io/sebastian-game/
 
+紹介動画: https://youtu.be/OIRRNmOXLKU
+
 霧深い断崖の上に建つ「ヴァルディア伯爵邸」を舞台にした、Gothic / Victorian 調の恋愛シミュレーションゲーム。執事セバスチャンとの**はらはらどきどきの5章+4分岐エンディング**を体験できるブラウザゲームです。
 
 ![title](images/image1.png)
