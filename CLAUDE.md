@@ -19,6 +19,15 @@ py -m http.server 8765
 
 To stop a backgrounded server: `Get-Process python* | Stop-Process -Force` (PowerShell).
 
+There is no test runner. The closest thing to a lint/check is parsing the two JS files:
+
+```sh
+node --check script.js
+node --check scenes.js
+```
+
+This catches syntax errors only; gameplay correctness still has to be verified in the browser.
+
 ## Deployment
 
 Push the entire directory contents to a GitHub repo, then enable Pages from the root of `main`. There is no build artifact — what you see is what gets served. All asset paths are relative (`images/...`, `bgm/...`, `movie/...`), so it works under any subpath.
@@ -52,6 +61,10 @@ State is global (`const State = {...}`), not encapsulated. The engine is built a
 - **`Sfx`** — synthesizes UI sounds via Web Audio API (no audio files). Three sounds: `tick()` (per-character typewriter), `choose()` (choice click), `heart()` (positive affection). All return early if `Music.isMuted()`.
 - The typewriter (`typeText` in `script.js`) builds a DOM skeleton mirroring the HTML structure of `text`, then progressively fills text nodes character-by-character. This is how it can both animate plain characters AND preserve inline tags like `<span class="narration">` and `<br>`.
 
+### Save data
+
+A single save slot is stored at `localStorage['sebastian_save_v1']` as JSON (current scene id, affection, BGM track). Mute is a separate key (`sebastian_muted`). If the save schema ever changes incompatibly, bump the key suffix rather than migrating in place — old saves should fail to load cleanly rather than corrupt state.
+
 ### HUD auto-fade
 
 The top HUD (`#hud`) is transparent and fades to ~18% opacity after `HUD_IDLE_MS` (2.5s) of input inactivity. Mouse/touch/key activity bumps it back to full. The floating mute button (`#muteBtn`) is shown only on non-game screens (title/credits/ending); the game screen has an inline mute icon inside the HUD pill. `showScreen()` toggles this.
@@ -66,9 +79,9 @@ Choice deltas range roughly -5 to +4. The running total is clamped to `[-10, +10
 
 ## Adding content
 
-**New scene**: add a node to `SCENES` with a unique id, point a previous node's `next` (or a choice's `next`) at it.
+**New scene**: add a node to `SCENES` with a unique id, point a previous node's `next` (or a choice's `next`) at it. Scene id convention: `s<chapter>_<n>` for linear nodes, `s<chapter>_choice<n>` for branch points, `chapter<n>_intro` for chapter openings, `s<chapter>_end` for chapter outros. Verify every `next` and choice target resolves to an existing id before considering the change done — there is no static checker for this.
 
-**New chapter image**: add file under `images/`, then add a key to the `IMG` map at the top of `scenes.js` and reference it via `IMG.yourkey`.
+**New chapter image**: add file under `images/`, then add a key to the `IMG` map at the top of `scenes.js` and reference it via `IMG.yourkey`. Asset keys are short descriptive names (`hall`, `closeup`).
 
 **New SFX**: add a function inside the `Sfx` IIFE following the pattern of `tick`/`choose` — synthesize via `ctx.createOscillator()` + gain envelope, no audio file needed.
 
