@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>セバスチャン ―真夜中の薔薇館―</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== OPENING MOVIE ========== -->
+<section id="opening" class="screen active">
+  <video id="openingVideo" playsinline preload="metadata">
+    <source src="movie/movie.mp4" type="video/mp4" />
+  </video>
+  <button id="skipBtn" class="skip-btn">SKIP ▸▸</button>
+  <button id="startVideoBtn" class="start-video-btn">▶ オープニングを再生</button>
+</section>
+
+<!-- ========== TITLE SCREEN ========== -->
+<section id="title" class="screen">
+  <div class="title-bg" style="background-image:url('images/image1.png')"></div>
+  <div class="title-overlay"></div>
+  <div class="title-inner">
+    <h1 class="game-title">
+      <span class="title-sub">真夜中の薔薇館</span>
+      <span class="title-main">SEBASTIAN</span>
+      <span class="title-deco">― 執事と秘密の恋 ―</span>
+    </h1>
+    <div class="title-menu">
+      <button class="title-btn" data-action="start">▷ 物語を始める</button>
+      <button class="title-btn" data-action="continue">▷ 続きから</button>
+      <button class="title-btn" data-action="credits">▷ クレジット</button>
+    </div>
+    <p class="title-foot">― あなたの選択が、彼の運命を変える ―</p>
+  </div>
+</section>
+
+<!-- ========== GAME SCREEN ========== -->
+<section id="game" class="screen">
+  <!-- background image -->
+  <div id="bg" class="bg"></div>
+  <div class="vignette"></div>
+
+  <!-- character / scene image -->
+  <div id="character" class="character"></div>
+
+  <!-- HUD: integrated, auto-fading -->
+  <div id="hud" class="hud">
+    <!-- Left: chapter pill -->
+    <div class="hud-pill hud-chapter">
+      <span class="hud-label">CHAPTER</span>
+      <span id="chapterNum" class="hud-value">1</span>
+      <span class="hud-sep">/</span>
+      <span>5</span>
+    </div>
+
+    <!-- Right: affection + control cluster -->
+    <div class="hud-pill hud-cluster">
+      <span class="hud-label">♥</span>
+      <div class="affection-bar">
+        <div id="affectionFill" class="affection-fill"></div>
+      </div>
+      <span id="affectionVal" class="hud-value">0</span>
+      <span class="hud-divider"></span>
+      <button id="muteBtnInline" class="hud-icon" title="BGM ON/OFF">♪</button>
+      <button id="menuBtn" class="hud-icon" title="メニュー">≡</button>
+    </div>
+  </div>
+
+  <!-- Dialogue box -->
+  <div id="dialogueBox" class="dialogue-box">
+    <div id="speakerName" class="speaker-name"></div>
+    <div id="dialogueText" class="dialogue-text"></div>
+    <div id="continueIndicator" class="continue-indicator">▼</div>
+  </div>
+
+  <!-- Choices -->
+  <div id="choices" class="choices"></div>
+
+  <!-- Heartbeat overlay (for dramatic moments) -->
+  <div id="heartbeat" class="heartbeat-overlay">
+    <div class="heartbeat-circle"></div>
+  </div>
+
+  <!-- Flash overlay -->
+  <div id="flash" class="flash-overlay"></div>
+
+  <!-- Menu modal -->
+  <div id="menuModal" class="modal">
+    <div class="modal-inner">
+      <h2>― メニュー ―</h2>
+      <button class="modal-btn" data-menu="resume">物語に戻る</button>
+      <button class="modal-btn" data-menu="save">セーブ</button>
+      <button class="modal-btn" data-menu="load">ロード</button>
+      <button class="modal-btn" data-menu="title">タイトルへ</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ENDING SCREEN ========== -->
+<section id="ending" class="screen">
+  <div id="endingBg" class="bg"></div>
+  <div class="vignette"></div>
+  <div class="ending-inner">
+    <h2 id="endingTitle" class="ending-title"></h2>
+    <p id="endingText" class="ending-text"></p>
+    <div class="ending-stats">
+      <span>最終好感度: <b id="finalAffection">0</b> / 10</span>
+    </div>
+    <div class="ending-buttons">
+      <button class="title-btn" id="restartBtn">▷ もう一度始める</button>
+      <button class="title-btn" id="toTitleBtn">▷ タイトルへ</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CREDITS ========== -->
+<section id="credits" class="screen">
+  <div class="credits-bg" style="background-image:url('images/image5.png')"></div>
+  <div class="title-overlay"></div>
+  <div class="credits-inner">
+    <h2>― CREDITS ―</h2>
+    <p class="cr-line"><span>原案・脚本</span><span>あなたとセバスチャン</span></p>
+    <p class="cr-line"><span>キャラクター</span><span>Sebastian Valdia</span></p>
+    <p class="cr-line"><span>舞台</span><span>ヴァルディア伯爵邸</span></p>
+    <p class="cr-line"><span>時代</span><span>19世紀末・霧深き夜</span></p>
+    <p class="cr-quote">「お嬢様。あなたの夜を、私が灯火と致しましょう。」</p>
+    <button class="title-btn" id="creditBack">▷ タイトルに戻る</button>
+  </div>
+</section>
+
+<!-- ========== BGM ========== -->
+<!-- preload=metadata: fetch only header info on load. The actual file is
+     downloaded lazily when Music.play() is first called for the track. -->
+<audio id="bgm1" src="bgm/bgm1.mp3" loop preload="metadata"></audio>
+<audio id="bgm2" src="bgm/bgm2.mp3" loop preload="metadata"></audio>
+
+<!-- Floating mute button (only visible on title/credits/ending screens) -->
+<button id="muteBtn" class="mute-btn-floating" title="BGM ON/OFF">♪</button>
+
+<script src="scenes.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
