@@ -564,6 +564,7 @@ const SCENES = {
   },
   s3_garden1:{
     bg:IMG.hall,
+    bgm:'bgm3',
     speaker:'',
     text:'<span class="narration">霧が薄く立ち込める薔薇園を、二人で歩いた。<br>湿った石畳に、彼の靴音だけが、なぜか、相変わらず一切しない。</span>',
     next:'s3_garden2'
@@ -917,6 +918,7 @@ const SCENES = {
   s4_b1:{
     character:IMG.closeup,
     effect:'flash heartbeat-stop',
+    bgm:'bgm3',
     speaker:'セバスチャン',
     text:'……お嬢様。<br>(初めて、彼は跪き、あなたの手の甲に唇を寄せた)<br>あなたという、人は……。',
     next:'s4_b_join'
@@ -970,7 +972,7 @@ const SCENES = {
     bg:IMG.hall,
     character:null,
     speaker:'',
-    bgm:'bgm2',
+    bgm:'bgm3',
     text:'<span class="narration">― 最終章 月夜の誓い ―</span>',
     next:'s5_pre1'
   },
@@ -1174,6 +1176,7 @@ const SCENES = {
   s5_aft4:{
     character:IMG.closeup,
     effect:'shake',
+    bgm:'bgm4',
     speaker:'',
     text:'<span class="narration">「ごめんなさい」<br>声が、震えた。<br>踵を返して扉に向かう背中に、彼は何も言わなかった。<br>ただ、白手袋を整え、深く、深く、頭を下げる気配だけがあった。</span>',
     next:'ending_branch'
