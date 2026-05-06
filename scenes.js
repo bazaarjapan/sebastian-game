@@ -261,6 +261,18 @@ const SCENES = {
     bg:IMG.corridor,
     speaker:'',
     text:'<span class="narration">深夜。雨音に混じって、聞き覚えのない調べがどこからか流れてきた。<br>古いピアノの旋律――しかし、調律のずれた音色はひどく哀しげだ。</span>',
+    next:'s2_1b'
+  },
+  s2_1b:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">どこかで聞いた旋律。<br>(……これは、母が子守唄に弾いてくれた曲。<br>けれど、誰も知らないはずの、私だけの記憶のはず)</span>',
+    next:'s2_1c'
+  },
+  s2_1c:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">枕元の燭台に火を灯す。指先が、わずかに震えていた。<br>こんな夜半に廊下を歩くなど、礼儀知らずだと、母なら叱ったろうか。<br>――けれど、足は、もう扉に向かっていた。</span>',
     next:'s2_2'
   },
   s2_2:{
@@ -268,12 +280,30 @@ const SCENES = {
     speaker:'',
     text:'<span class="narration">音を辿るように廊下へ出る。蝋燭は、なぜか全て消えていた。</span>',
     effect:'heartbeat-start',
+    next:'s2_2b'
+  },
+  s2_2b:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">手にした燭台の炎だけが、ぽつり、と石壁を照らす。<br>歩を進めるたび、自分の影が床を這って、まるで別の何かが付いてくるようだった。</span>',
+    next:'s2_2c'
+  },
+  s2_2c:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">旋律はだんだんと近くなる。<br>けれど、近づくほどに――<br>それは、ピアノではなく、誰かが口ずさむ声のように聞こえはじめた。</span>',
     next:'s2_3'
   },
   s2_3:{
     bg:IMG.corridor,
     speaker:'???',
     text:'……お嬢様。',
+    next:'s2_3b'
+  },
+  s2_3b:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">背後から、雨音より低い声。<br>振り向こうとして、振り向けない。<br>振り向けば、何かが、決定的に変わってしまう気がした。</span>',
     next:'s2_4'
   },
   s2_4:{
@@ -282,6 +312,12 @@ const SCENES = {
     effect:'character-show shake',
     speaker:'セバスチャン',
     text:'こんな夜更けに、どうなさいました。',
+    next:'s2_4b'
+  },
+  s2_4b:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">――燭台を、彼は持っていなかった。<br>それなのに、闇の中で、その輪郭だけがはっきりと浮かび上がっていた。<br>まるで、夜そのものが、彼を縁取っているかのように。</span>',
     next:'s2_5'
   },
   s2_5:{
@@ -305,20 +341,32 @@ const SCENES = {
     effect:'heartbeat-stop',
     speaker:'セバスチャン',
     text:'……お一人でしたか。<br>申し訳ございません。私の不徳の致すところで。',
-    next:'s2_6'
+    next:'s2_a_join'
   },
   s2_a2:{
     character:IMG.closeup,
     effect:'heartbeat-stop',
     speaker:'セバスチャン',
     text:'……っ。<br>そのような言葉、執事に向ける言葉ではございませんよ、お嬢様。<br>(けれど、声が、わずかに震えていた)',
-    next:'s2_6'
+    next:'s2_a_join'
   },
   s2_a3:{
     character:IMG.closeup,
     effect:'shake',
     speaker:'セバスチャン',
     text:'……お嬢様。<br>あの音は、風がガラスを鳴らしたものに過ぎません。<br>お部屋に戻りましょう。今すぐに。',
+    next:'s2_a_join'
+  },
+  s2_a_join:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">彼の答えは、どれも、はぐらかすようでいて――<br>けれど、その瞳は、嘘をつくには、深すぎた。</span>',
+    next:'s2_a_join2'
+  },
+  s2_a_join2:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……あの旋律は、お聞きにならなかったことに、どうかなさってくださいませ。<br>古い館には、雨と風に応える、古い音が住まうものでございます。',
     next:'s2_6'
   },
   s2_6:{
@@ -326,6 +374,12 @@ const SCENES = {
     effect:'character-show',
     speaker:'セバスチャン',
     text:'(白手袋を、ゆっくりと整えながら)<br>……お部屋までお送り致します。手を、お貸しいただけますか。',
+    next:'s2_6b'
+  },
+  s2_6b:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">差し出された手袋の白さ。<br>夜の闇の中で、それだけが、まるで一輪の白百合のように、宙に咲いていた。</span>',
     next:'s2_choice2'
   },
   s2_choice2:{
@@ -343,24 +397,55 @@ const SCENES = {
     effect:'flash',
     speaker:'セバスチャン',
     text:'……熱い。<br>(手袋越しでも、はっきりと伝わるあなたの体温に、彼は息を呑んだ)',
-    next:'s2_7'
+    next:'s2_b_join'
   },
   s2_b2:{
     character:IMG.gloves,
     speaker:'セバスチャン',
     text:'……ありがとうございます、お嬢様。<br>怖い思いをさせて、申し訳ございません。',
-    next:'s2_7'
+    next:'s2_b_join'
   },
   s2_b3:{
     character:IMG.gloves,
     speaker:'セバスチャン',
     text:'……。<br>かしこまりました。<br>(その手は、行き場をなくしたまま、空を握った)',
+    next:'s2_b_join'
+  },
+  s2_b_join:{
+    bg:IMG.corridor,
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">廊下を歩く間、二人の足音は、奇妙なほど揃わなかった。<br>あなたの靴音は石床に残るのに、彼の足音だけは、驚くほど、何ひとつ立てない。</span>',
+    next:'s2_b_join2'
+  },
+  s2_b_join2:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'……お嬢様は、お母様を、覚えておいでですか。',
+    next:'s2_b_join3'
+  },
+  s2_b_join3:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">唐突な問い。<br>覚えている。覚えているに決まっている。<br>けれど、なぜ今、彼が、それを訊くのだろう。</span>',
+    next:'s2_b_join4'
+  },
+  s2_b_join4:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'……失礼を。<br>夜が深いと、人は、訊いてはならぬことを訊いてしまう。<br>どうか、お忘れくださいませ。',
     next:'s2_7'
   },
   s2_7:{
     character:IMG.gloves,
     speaker:'セバスチャン',
     text:'お嬢様。<br>……どうか、私を、信じすぎないでくださいませ。',
+    next:'s2_7b'
+  },
+  s2_7b:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">信じる、信じない、ではなく。<br>(……あなたは、何を、私から守ろうとしているの)<br>その問いは、しかし、口にする前に喉の奥で凍った。</span>',
     next:'s2_end'
   },
   s2_end:{
@@ -369,6 +454,12 @@ const SCENES = {
     speaker:'',
     text:'<span class="narration">何故、そんなことを。<br>言葉を返す前に、彼は闇に溶けるように、廊下の奥へと消えていった。</span>',
     effect:'heartbeat-stop',
+    next:'s2_end2'
+  },
+  s2_end2:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">部屋に戻り、ベッドに腰掛ける。<br>掌には、まだ、白手袋越しの彼の指の感触が残っているような気がした。<br>(……母の弾いた、あの旋律。彼は、知っているのだろうか)</span>',
     next:'chapter3_intro'
   },
 
