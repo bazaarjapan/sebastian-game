@@ -2,6 +2,17 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Workflow ― Issue 駆動
+
+非自明な作業 (シナリオ拡張・機能追加・リファクタなど) を始める前に、必ず GitHub Issue を切ってからブランチを作る。
+
+1. **Issue を起票** — `gh issue create` で目的・スコープ・完了条件を書く。割り当てられた番号を控える
+2. **ブランチを作る** — Issue 番号をブランチ名に含める。例: `feat/12-extend-story`、`fix/15-typo`
+3. **キリのいいコミットごとに進捗を Issue に記録** — `gh issue comment <番号> --body "..."` で「何をやったか / 残りタスク」を都度コメントする。コミットメッセージのフッタにも `Refs #<番号>` を入れて Issue から辿れるようにする
+4. **完了時に Issue を閉じる** — PR をマージするか、直接 `gh issue close <番号>` でクローズ
+
+軽微な作業 (typo 修正、ドキュメントの一行追記など) は Issue を省略してよい。判断に迷ったら Issue を切る。
+
 ## Project
 
 Static HTML/CSS/JS visual novel ("セバスチャン ―真夜中の薔薇館―"). No build step, no dependencies, designed for direct deployment to GitHub Pages. All assets are co-located: `images/`, `movie/`, `bgm/`.
