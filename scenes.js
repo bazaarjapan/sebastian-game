@@ -972,12 +972,36 @@ const SCENES = {
     speaker:'',
     bgm:'bgm2',
     text:'<span class="narration">― 最終章 月夜の誓い ―</span>',
+    next:'s5_pre1'
+  },
+  s5_pre1:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">塔の最上階の扉。<br>木目に深く刻まれていたのは、薔薇と茨の絡まる紋章。<br>その中央に、燭台と同じ大きさの鍵穴があった。</span>',
+    next:'s5_pre2'
+  },
+  s5_pre2:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">燭台の柄を、ゆっくりと差し込む。<br>音もなく回り、木の扉は、たいした重さもなく内側へと開いた。<br>(……まるで、私の手で開かれることを、最初から待っていたみたいに)</span>',
     next:'s5_1'
   },
   s5_1:{
     bg:IMG.hall,
     speaker:'',
     text:'<span class="narration">塔の扉が開かれた。<br>そこに横たわっていたのは――茨に縛られ、眠る、もう一人のセバスチャン。</span>',
+    next:'s5_1b'
+  },
+  s5_1b:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">大理石の寝台。<br>その全身を覆うのは、生きている茨。葉脈が呼吸するように、ゆっくりと動いていた。<br>顔は、振り向いた彼そのもの。<br>けれど、瞼を閉じたその表情は、五十年眠り続けた者の、深い疲弊を刻んでいた。</span>',
+    next:'s5_1c'
+  },
+  s5_1c:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">寝台の足元には、枯れた薔薇の花弁が、何十年分も積もっている。<br>これまで、ここに導かれた娘たちの、選ばなかった答えの数だけ。</span>',
     next:'s5_2'
   },
   s5_2:{
@@ -986,6 +1010,24 @@ const SCENES = {
     effect:'character-show',
     speaker:'セバスチャン',
     text:'これが、私の本当の姿。<br>呪いに侵された、半身でございます。',
+    next:'s5_2b'
+  },
+  s5_2b:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お嬢様の前にいる私は、影。<br>半身が眠っている間、館を維持するためだけの幻のようなもので。<br>……五十年、ずっと、こうしてきました。',
+    next:'s5_2c'
+  },
+  s5_2c:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'娘が来るたび、私は出迎え、館を案内し、紅茶を淹れ……。<br>そして、毎度、別れを告げてまいりました。<br>けれど、お嬢様。あなたほど、長く言葉を交わした方は、おりませんでした。',
+    next:'s5_2d'
+  },
+  s5_2d:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">――母の話を、聞き出したくて、何度もお茶の席を所望した。<br>薔薇の名を、覚え切れぬほど教わった。<br>その時間が、彼にとっては、五十年で初めての、奇跡だったというのか。</span>',
     next:'s5_3'
   },
   s5_3:{
@@ -999,6 +1041,104 @@ const SCENES = {
     effect:'heartbeat-start shake',
     speaker:'セバスチャン',
     text:'……あなたが、命を落とします。<br>これが、ヴァルディアの呪い。',
+    next:'s5_4b'
+  },
+  s5_4b:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お母様は、それを知って、塔まで来ながら、寝台の前で踵を返された。<br>そして、館を捨てて、外の世で生きる道を選ばれたのです。<br>……賢明な、判断でございました。',
+    next:'s5_4c'
+  },
+  s5_4c:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お嬢様も、お母様と同じように、踵を返してくださって構いません。<br>私は、また、五十年でも百年でも、眠り続ければよいのです。<br>それが、ヴァルディアに生まれた者の、宿命でございます。',
+    next:'s5_5'
+  },
+  s5_5:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">――けれど。<br>その「賢明な判断」をした母は、生涯、薔薇の紅茶を淹れるたびに、どこか遠くを見つめていた。<br>幸せだったはず。愛する人と生きていたはず。<br>それでも、母は、何かを置き忘れたまま、外の世界で生きていた。</span>',
+    next:'s5_6'
+  },
+  s5_6:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">あなたは、懐から、銀の懐中時計を取り出した。<br>父の形見と思っていた、紋章の擦り切れた時計。<br>けれど、その紋章は、よく見れば――薔薇と茨の絡まる、ヴァルディアの印だった。<br>(……母さん。あなたの、答えだったの)</span>',
+    next:'s5_7'
+  },
+  s5_7:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……それは。<br>お嬢様。それは、お母様の懐中時計でございます。<br>初めて館を訪れた日、お母様が、寝台の脇に置いて行かれた、たった一つの遺品。',
+    next:'s5_8'
+  },
+  s5_8:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">そう、これは父の形見ではなかった。<br>父が、嫁いできた母から預かり、わたしを引き取ってくれた弁護士に託したもの。<br>母は、最後まで、館に何かを残していた。</span>',
+    next:'s5_9'
+  },
+  s5_9:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お母様は、踵を返されたあとも、毎年、薔薇の咲く頃に、私のもとへ手紙を寄越されました。<br>「あなたを忘れたわけではない。<br>けれど、私には、もう、私の家庭がある」と。',
+    next:'s5_10'
+  },
+  s5_10:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'最後の手紙は、十六年前。<br>「娘が生まれました。<br>もし、私のあとに、もう一度、館があの子を呼ぶ日が来たならば――<br>そのときは、どうか、あの子の心に従ってあげてください」と。',
+    next:'s5_11'
+  },
+  s5_11:{
+    character:IMG.closeup,
+    effect:'flash',
+    speaker:'',
+    text:'<span class="narration">――母さん。<br>あなたは、わたしを、ここに来させるつもりだったの?<br>いいえ。あなたは、選択肢を、わたしに残してくれた。<br>逃げてもいい。選んでもいい。<br>どちらも、母の愛だった。</span>',
+    next:'s5_12'
+  },
+  s5_12:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'お嬢様。<br>……お決めになるのは、お嬢様ご自身でございます。<br>私のために、決めてくださる必要は、一片もございません。',
+    next:'s5_13'
+  },
+  s5_13:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'もし、踵を返されるなら――<br>明朝、馬車をご用意致します。<br>この夜のことは、夢として、生涯、お忘れくださいませ。',
+    next:'s5_14'
+  },
+  s5_14:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'もし、進まれるなら――<br>どうか、迷いなく。<br>迷いは、呪いの牙となって、お嬢様の心臓を貫きます。',
+    next:'s5_15'
+  },
+  s5_15:{
+    character:IMG.closeup,
+    effect:'heartbeat-start',
+    speaker:'',
+    text:'<span class="narration">月光が、塔の窓から差し込み、寝台の半身と、立つ彼とを、二つながら、白く照らした。<br>本物のセバスチャンは、どちらなのか。<br>――いや。どちらも、本物だった。</span>',
+    next:'s5_16'
+  },
+  s5_16:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">五十年、館を護ってきた執事の影。<br>百年、茨に縛られ眠ってきた、傷ついた半身。<br>その両方を、わたしは、もう、知っていた。</span>',
+    next:'s5_17'
+  },
+  s5_17:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……お嬢様。<br>最後に、ひとつだけ。<br>もし、生まれ変わることが許されるなら、私は、執事ではなく、あなたの隣で薔薇を育てる、ただの一人の男でありたかった。',
+    next:'s5_18'
+  },
+  s5_18:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……ご無礼を。<br>呪いの男が、口にしてよい言葉では、ございませんでした。<br>(白手袋で、口を覆った。けれど、その瞳は、涙のように、月光を弾いていた)',
     next:'s5_choice1'
   },
   s5_choice1:{
@@ -1006,11 +1146,37 @@ const SCENES = {
     speaker:'',
     text:'<span class="narration">月光が、彼の頬を白く濡らしていた。<br>あなたの心は、どう答える?</span>',
     choices:[
-      {text:'迷わず、彼に口づける',                       affection:+3, next:'ending_branch'},
-      {text:'「あなたを愛している」と告げてから、口づける', affection:+2, next:'ending_branch'},
-      {text:'抱きしめて、「一緒に呪いを背負う」と誓う',   affection:+2, next:'ending_branch'},
-      {text:'「ごめんなさい」と踵を返す',                 affection:-5, next:'ending_branch'},
+      {text:'迷わず、彼に口づける',                       affection:+3, next:'s5_aft1'},
+      {text:'「あなたを愛している」と告げてから、口づける', affection:+2, next:'s5_aft2'},
+      {text:'抱きしめて、「一緒に呪いを背負う」と誓う',   affection:+2, next:'s5_aft3'},
+      {text:'「ごめんなさい」と踵を返す',                 affection:-5, next:'s5_aft4'},
     ]
+  },
+  s5_aft1:{
+    character:IMG.closeup,
+    effect:'flash',
+    speaker:'',
+    text:'<span class="narration">言葉は要らなかった。<br>背伸びをして、彼の唇に、自分の唇を、そっと重ねる。<br>白手袋越しに、彼の手が、震えながら、わたしの肩を抱いた。</span>',
+    next:'ending_branch'
+  },
+  s5_aft2:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">「セバスチャン――愛してる」<br>声は、自分のものとも思えないほど、はっきりとしていた。<br>言い切ったあとに、初めて、自分の頬が濡れていることに気がついた。<br>そして、唇を、重ねた。</span>',
+    next:'ending_branch'
+  },
+  s5_aft3:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">「呪いも、半身も、ぜんぶ、わたしと半分こよ」<br>そう言って、抱きしめた。<br>彼の体は、思っていたより細く、月光のように冷たかった。<br>けれど、その鼓動は、確かに、人間のものだった。</span>',
+    next:'ending_branch'
+  },
+  s5_aft4:{
+    character:IMG.closeup,
+    effect:'shake',
+    speaker:'',
+    text:'<span class="narration">「ごめんなさい」<br>声が、震えた。<br>踵を返して扉に向かう背中に、彼は何も言わなかった。<br>ただ、白手袋を整え、深く、深く、頭を下げる気配だけがあった。</span>',
+    next:'ending_branch'
   },
 
   /* ending_branch is handled by engine: routes by affection */
