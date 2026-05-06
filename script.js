@@ -710,6 +710,7 @@ document.querySelectorAll('.modal-btn').forEach(btn=>{
     if(action==='title'){
       if(confirm('タイトル画面に戻りますか? 未セーブの進行は失われます。')){
         showScreen('title');
+        Music.play('bgm5');
       }
     }
   });
@@ -741,7 +742,10 @@ function routeToEnding(){
 }
 
 document.getElementById('restartBtn').addEventListener('click', startNewGame);
-document.getElementById('toTitleBtn').addEventListener('click', ()=>showScreen('title'));
+document.getElementById('toTitleBtn').addEventListener('click', ()=>{
+  showScreen('title');
+  Music.play('bgm5');
+});
 
 /* ============================================================
    Floating petals
