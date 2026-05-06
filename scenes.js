@@ -479,6 +479,18 @@ const SCENES = {
     bg:IMG.hall,
     speaker:'',
     text:'<span class="narration">翌朝。陽光が薔薇窓から差し込み、館は別世界のように輝いていた。<br>昨夜の出来事が、まるで夢のように思える。</span>',
+    next:'s3_1b'
+  },
+  s3_1b:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">窓の下には、思いがけず広い薔薇園が広がっていた。<br>季節外れの霜にも枯れず、深紅・白・くすんだ金色――幾種もの薔薇が、塀沿いに咲き乱れている。<br>(……こんな北方の地で、なぜ、これほどの薔薇が)</span>',
+    next:'s3_1c'
+  },
+  s3_1c:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">階下に降りると、磨き上げられた長卓に、ひと組分の食器が整然と並んでいた。<br>銀のスプーン一本に至るまで、紋章が、一切の曇りなく輝いている。</span>',
     next:'s3_2'
   },
   s3_2:{
@@ -487,12 +499,30 @@ const SCENES = {
     effect:'character-show',
     speaker:'セバスチャン',
     text:'おはようございます、お嬢様。<br>朝の紅茶をご用意致しました。バラの花弁を散らしたものでございます。',
+    next:'s3_2b'
+  },
+  s3_2b:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">注がれる紅茶の音は、まるで小川のせせらぎのよう。<br>湯気の中に、確かに薔薇の香りが揺れた。<br>――昨夜の闇は、本当に、夢だったのだろうか。</span>',
+    next:'s3_2c'
+  },
+  s3_2c:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">ひと口、含む。<br>……懐かしい味だった。<br>母が、季節の終わりに、薔薇の花弁を干して湯に浮かべてくれた、あの味。</span>',
     next:'s3_3'
   },
   s3_3:{
     character:IMG.gloves,
     speaker:'セバスチャン',
     text:'……昨夜は、お見苦しいところを。<br>夢の中の出来事として、お忘れいただければ幸いです。',
+    next:'s3_3b'
+  },
+  s3_3b:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">忘れろ、と。<br>けれど、この紅茶の味を覚えている彼に、忘れろと言われても。<br>(……あなたは、いつから、私のことを知っているの)</span>',
     next:'s3_choice1'
   },
   s3_choice1:{
@@ -510,18 +540,64 @@ const SCENES = {
     effect:'flash heartbeat-start',
     speaker:'セバスチャン',
     text:'……ッ。<br>お嬢様、それは……。<br>(白い頬に、わずかに朱が走った)',
-    next:'s3_4'
+    next:'s3_a_join'
   },
   s3_a2:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'本当のこと、ですか。<br>……それを聞いて、お嬢様は、後悔なさいませんか。',
-    next:'s3_4'
+    next:'s3_a_join'
   },
   s3_a3:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'……ありがとうございます。<br>(その瞳に、ほんの少し、寂しげな影が差した)',
+    next:'s3_a_join'
+  },
+  s3_a_join:{
+    bg:IMG.hall,
+    character:null,
+    effect:'heartbeat-stop',
+    speaker:'セバスチャン',
+    text:'……朝のうちは、まだ陽が高うございます。<br>よろしければ、薔薇園を、ご案内致しましょうか。',
+    next:'s3_garden1'
+  },
+  s3_garden1:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">霧が薄く立ち込める薔薇園を、二人で歩いた。<br>湿った石畳に、彼の靴音だけが、なぜか、相変わらず一切しない。</span>',
+    next:'s3_garden2'
+  },
+  s3_garden2:{
+    bg:IMG.hall,
+    character:IMG.gloves,
+    effect:'character-show',
+    speaker:'セバスチャン',
+    text:'こちらの深紅は「ヴァルディアの血」と呼ばれております。<br>初代当主が、最愛のご令嬢のために交配なさった、この館の象徴でございます。',
+    next:'s3_garden3'
+  },
+  s3_garden3:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'……一輪、お切りしてもよろしいでしょうか。<br>(剪定鋏が、白手袋越しに、優しく茎を抱いた)',
+    next:'s3_garden4'
+  },
+  s3_garden4:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">差し出された深紅の薔薇は、まだ朝露に濡れていた。<br>受け取る指先が触れた瞬間、彼の手袋越しの体温が、確かに、伝わった。</span>',
+    next:'s3_garden5'
+  },
+  s3_garden5:{
+    character:IMG.gloves,
+    speaker:'セバスチャン',
+    text:'……お嬢様。<br>この館で、薔薇の名を覚えることは、お時間の浪費ではございません。<br>名を知る、ということは――遺すべき記憶を選ぶ、ということでございます。',
+    next:'s3_garden6'
+  },
+  s3_garden6:{
+    character:IMG.gloves,
+    speaker:'',
+    text:'<span class="narration">遺すべき記憶。<br>その言い回しが、奇妙に胸に引っかかった。<br>(……まるで、自分には記憶を遺す力がない、と言っているような)</span>',
     next:'s3_4'
   },
   s3_4:{
@@ -537,6 +613,18 @@ const SCENES = {
     speaker:'セバスチャン',
     bgm:'bgm2',
     text:'私が、この館で執事を務めて――もう五十年になります。',
+    next:'s3_5b'
+  },
+  s3_5b:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お嬢様のお祖父様の代から、ずっと。<br>……もしかすると、お嬢様のお母様の、ご幼少のころも、私はこの目で存じております。',
+    next:'s3_5c'
+  },
+  s3_5c:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">――母を、知っている。<br>昨夜の旋律が、なぜ伝わらなかったはずの曲だったのか。<br>その答えが、突然、目の前に横たわっていた。</span>',
     next:'s3_6'
   },
   s3_6:{
@@ -544,6 +632,12 @@ const SCENES = {
     effect:'shake',
     speaker:'',
     text:'<span class="narration">五十年。<br>目の前にいる青年は、どう見ても二十代半ばだというのに。</span>',
+    next:'s3_6b'
+  },
+  s3_6b:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">大広間の柱時計に、ふと目をやる。<br>振り子は、確かに、揺れていない。<br>(……止まっている? いや、最初から、動いていなかったのかもしれない)</span>',
     next:'s3_choice2'
   },
   s3_choice2:{
@@ -561,19 +655,37 @@ const SCENES = {
     effect:'flash',
     speaker:'セバスチャン',
     text:'……お嬢様。<br>何故、あなたという方は、そう……私を試すような言葉を仰るのですか。',
-    next:'s3_7'
+    next:'s3_b_join'
   },
   s3_b2:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'……ありがとうございます。<br>怖いと、仰ってくださって。<br>その方が、ずっと、人間らしい。',
-    next:'s3_7'
+    next:'s3_b_join'
   },
   s3_b3:{
     character:IMG.closeup,
     effect:'shake',
     speaker:'セバスチャン',
     text:'……ええ。<br>信じない方が、お嬢様のためでございます。',
+    next:'s3_b_join'
+  },
+  s3_b_join:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お嬢様。<br>……お母様は、若かりし日、よくこの庭で薔薇を摘まれておいででした。<br>祖父である伯爵様の妹君として、生まれ育ったこの館で。',
+    next:'s3_b_join2'
+  },
+  s3_b_join2:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">――母は、ヴァルディアの娘だった。<br>あなたは、知らされていなかった。<br>母は嫁いだあと、生家のことを、決して語らなかったから。</span>',
+    next:'s3_b_join3'
+  },
+  s3_b_join3:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お嬢様には、ヴァルディアの血が流れております。<br>……それが、この呪われた館に、あなたが招かれた本当の理由でございます。',
     next:'s3_7'
   },
   s3_7:{
@@ -581,6 +693,18 @@ const SCENES = {
     speaker:'セバスチャン',
     text:'伯爵様は、行方不明ではございません。<br>……西の塔に、おわします。',
     effect:'heartbeat-stop',
+    next:'s3_7b'
+  },
+  s3_7b:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">手にしたカップが、震えていた。<br>紅茶の波紋が、自分の動揺を、無慈悲に映し返している。</span>',
+    next:'s3_7c'
+  },
+  s3_7c:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'今宵、月が高く昇ったら――<br>もし、お嬢様にお覚悟がございましたら、私が、塔へお連れ致します。<br>判断は、それまでに。',
     next:'s3_end'
   },
   s3_end:{
@@ -588,6 +712,12 @@ const SCENES = {
     character:null,
     speaker:'',
     text:'<span class="narration">紅茶のカップから立ちのぼる湯気が、ゆらりと震えた。<br>真実は、もう、すぐそこにあった。</span>',
+    next:'s3_end2'
+  },
+  s3_end2:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">日が沈むまでの数時間が、奇妙に長かった。<br>あなたは何度も窓辺に立ち、薔薇園と西の塔の影を、交互に眺めた。<br>覚悟。<br>その言葉が、これほど重く感じられたことは、生涯になかった。</span>',
     next:'chapter4_intro'
   },
 
