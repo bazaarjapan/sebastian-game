@@ -23,7 +23,7 @@ const ENDINGS = {
     title:'TRUE END',
     sub:'― 永遠の薔薇 ―',
     bg:IMG.gloves,
-    bgm:'bgm1',
+    bgm:'bgm3',
     text:`月光の中、二人の唇が触れた瞬間――茨は薔薇となり、塔を覆い尽くした。<br><br>
 "お嬢様。いえ……愛しい人よ。<br>
 この生涯、私の手袋は、あなたのためだけに白くあり続けます。"<br><br>
@@ -46,7 +46,7 @@ const ENDINGS = {
     title:'BITTERSWEET END',
     sub:'― 別離の手袋 ―',
     bg:IMG.corridor,
-    bgm:'bgm2',
+    bgm:'bgm4',
     text:`あなたは口づけることができなかった。<br>
 セバスチャンは静かに微笑み、白手袋を差し出した。<br><br>
 "これは、私の心の代わりにございます。<br>
@@ -58,7 +58,7 @@ const ENDINGS = {
     title:'BAD END',
     sub:'― 鏡の中の薔薇 ―',
     bg:IMG.closeup,
-    bgm:'bgm2',
+    bgm:'bgm4',
     text:`塔の扉が、音もなく閉じた。<br>
 振り返ったとき、そこにはもう、誰もいなかった。<br><br>
 ただ一輪――黒い薔薇が、床に落ちていた。<br>
@@ -79,8 +79,10 @@ const Music = (()=>{
   const FADE_MS = 1200;
 
   function init(){
-    tracks.bgm1 = document.getElementById('bgm1');
-    tracks.bgm2 = document.getElementById('bgm2');
+    ['bgm1','bgm2','bgm3','bgm4','bgm5','bgm6'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) tracks[id] = el;
+    });
     Object.values(tracks).forEach(t=>{
       t.volume = 0;
       t.loop = true;
@@ -325,7 +327,7 @@ skipBtn.addEventListener('click', ()=>{
 function goToTitle(){
   showScreen('title');
   spawnPetals('title', 6);
-  Music.play('bgm1');
+  Music.play('bgm5');
 }
 
 /* ============================================================
@@ -338,11 +340,17 @@ document.querySelectorAll('.title-btn[data-action]').forEach(btn=>{
     const action = btn.dataset.action;
     if(action==='start') startNewGame();
     else if(action==='continue') loadGame();
-    else if(action==='credits') showScreen('credits');
+    else if(action==='credits'){
+      showScreen('credits');
+      Music.play('bgm6');
+    }
   });
 });
 
-document.getElementById('creditBack').addEventListener('click', ()=>showScreen('title'));
+document.getElementById('creditBack').addEventListener('click', ()=>{
+  showScreen('title');
+  Music.play('bgm5');
+});
 
 function startNewGame(){
   State.current = 'start';
