@@ -43,7 +43,7 @@ sebastian-game/
 |------|------|------|
 | 背景・立ち絵 | 5 枚程度 | `images/image1.png` 〜 `image5.png` |
 | オープニング動画 | 1 本 | `movie/movie.mp4` (音声付き) |
-| BGM | 2 曲 | `bgm/bgm1.mp3` (平常時) / `bgm/bgm2.mp3` (不穏時) |
+| BGM | 2 曲 | `bgm/セバスチャンの日常.mp3` (平常時) / `bgm/セバスチャンの影.mp3` (不穏時) |
 
 BGM はループ再生されます。**ファイル両端の無音を 0 に詰めて** ください。詰めないとループ点でクリックノイズが鳴ります。
 
@@ -74,8 +74,8 @@ SPA として 5 つの `<section class="screen">` を全部書いておき、JS 
 ページ末尾に音声と外部スクリプトを置きます。**`scenes.js` を `script.js` より先に読み込むこと** (script.js は SCENES と IMG にトップレベルで依存)。
 
 ```html
-<audio id="bgm1" src="bgm/bgm1.mp3" loop preload="metadata"></audio>
-<audio id="bgm2" src="bgm/bgm2.mp3" loop preload="metadata"></audio>
+<audio id="bgm1" src="bgm/セバスチャンの日常.mp3" loop preload="metadata"></audio>
+<audio id="bgm2" src="bgm/セバスチャンの影.mp3" loop preload="metadata"></audio>
 
 <script src="scenes.js"></script>
 <script src="script.js"></script>
