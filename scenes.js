@@ -23,18 +23,48 @@ const SCENES = {
     speaker:'',
     bgm:'bgm1',
     text:'<span class="narration">―― 一八九X年、霧深き秋の夜。<br>あなたを乗せた馬車は、人里離れた断崖の上に建つ「ヴァルディア伯爵邸」へと辿り着いた。</span>',
+    next:'s1_pre1'
+  },
+  s1_pre1:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">車輪が石畳を叩く音だけが、永遠のように続いている。<br>窓の外、深い森は闇に沈み、稲妻が走るたびに、見たこともない樹々の輪郭が浮かんでは消えた。</span>',
+    next:'s1_pre2'
+  },
+  s1_pre2:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">膝の上には、亡き父の銀の懐中時計。<br>蓋を開けば、刻まれた紋章は擦り切れて、もう、どの家のものかも判別できない。</span>',
+    next:'s1_pre3'
+  },
+  s1_pre3:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">――両親を流行り病で失って、ひと月。<br>身寄りといえば、会ったこともない遠縁の伯爵だけ。<br>「ヴァルディア家でお引き取りいただけることになりました」と、弁護士は事務的に告げた。</span>',
     next:'s1_2'
   },
   s1_2:{
     bg:IMG.hall,
     speaker:'',
     text:'<span class="narration">天涯孤独となったあなたを引き取ってくださったのは、亡き母の遠縁にあたるヴァルディア伯爵。<br>しかしその伯爵は、半年前から行方不明だという。</span>',
+    next:'s1_2b'
+  },
+  s1_2b:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">それでも、行く当てのないあなたを、館は迎え入れると返書を寄越した。<br>差出人の署名は――「執事 セバスチャン・ヴァルディア」。</span>',
     next:'s1_3'
   },
   s1_3:{
     bg:IMG.hall,
     speaker:'',
-    text:'<span class="narration">門の前で待っていたのは、雨に濡れた黒衣の男――この館の執事だった。</span>',
+    text:'<span class="narration">不意に、雷光が空を裂いた。<br>その閃きの中、断崖の頂に黒い影絵のように浮かび上がる、尖塔の連なり。<br>――それが、ヴァルディア伯爵邸だった。</span>',
+    next:'s1_3b'
+  },
+  s1_3b:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">門の前で待っていたのは、雨に濡れた黒衣の男――この館の執事だった。<br>傘もささず、燭台ひとつを手にして、ただ、静かに佇んでいた。</span>',
     next:'s1_4'
   },
   s1_4:{
@@ -43,12 +73,24 @@ const SCENES = {
     effect:'character-show',
     speaker:'セバスチャン',
     text:'お待ちしておりました、お嬢様。<br>私はこの館で執事を務めております、セバスチャン・ヴァルディアと申します。',
+    next:'s1_4b'
+  },
+  s1_4b:{
+    character:IMG.bowing,
+    speaker:'',
+    text:'<span class="narration">深く下げられた頭。雨粒は、その黒髪を伝って、燭台の炎に小さく弾けた。<br>その所作の、隙のなさ。執事というには、あまりに端正に過ぎる。</span>',
     next:'s1_5'
   },
   s1_5:{
     character:IMG.bowing,
     speaker:'セバスチャン',
     text:'伯爵様の代理として、この館の一切を取り仕切っております。<br>……どうか、ご無礼をお許しくださいませ。',
+    next:'s1_5b'
+  },
+  s1_5b:{
+    character:IMG.bowing,
+    speaker:'',
+    text:'<span class="narration">声は低く、雨音をするりとくぐり抜けてあなたの耳に届く。<br>無礼など、どこにあるというのか。彼ほど慇懃な男に、まだ会ったことがなかった。</span>',
     next:'s1_6'
   },
   s1_6:{
@@ -93,7 +135,34 @@ const SCENES = {
     bg:IMG.hall,
     character:IMG.bowing,
     speaker:'セバスチャン',
-    text:'お部屋へご案内致します。<br>……ただし、一つだけお願いがございます。',
+    text:'お部屋へご案内致します。<br>長旅でお疲れでしょう。湯浴みの支度も、整えてございます。',
+    next:'s1_7b'
+  },
+  s1_7b:{
+    bg:IMG.hall,
+    character:null,
+    speaker:'',
+    text:'<span class="narration">先導されて踏み入った大広間は、想像を絶する広さだった。<br>天井から吊られた燭台はどれも半分以上が消え、磨き上げられた床にだけ、点々と炎が映り込んでいる。</span>',
+    next:'s1_7c'
+  },
+  s1_7c:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">壁に飾られた歴代当主の肖像画は、なぜかどれも、目元だけが布で隠されていた。<br>(……どうして、目だけを?)<br>訊ねようとした唇が、なぜか動かなかった。</span>',
+    next:'s1_7d'
+  },
+  s1_7d:{
+    bg:IMG.hall,
+    character:IMG.bowing,
+    effect:'character-show',
+    speaker:'セバスチャン',
+    text:'こちらが、お嬢様のお部屋でございます。<br>南向きの一室を、急ぎ整えさせていただきました。',
+    next:'s1_8_pre'
+  },
+  s1_8_pre:{
+    character:IMG.bowing,
+    speaker:'セバスチャン',
+    text:'……それから、お嬢様。<br>お休みになる前に、一つだけお願いがございます。',
     next:'s1_8'
   },
   s1_8:{
@@ -124,25 +193,53 @@ const SCENES = {
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'……ありがとうございます。<br>あなたは、聡明なお方だ。',
-    next:'s1_end'
+    next:'s1_post1'
   },
   s1_b2:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'……知らぬが、お嬢様の幸せでございます。<br>どうか、お忘れください。',
-    next:'s1_end'
+    next:'s1_post1'
   },
   s1_b3:{
     character:IMG.closeup,
     effect:'shake',
     speaker:'セバスチャン',
     text:'……お嬢様。<br>好奇心は、時に身を滅ぼします。覚えておいてくださいませ。',
+    next:'s1_post1'
+  },
+  s1_post1:{
+    bg:IMG.hall,
+    character:IMG.bowing,
+    speaker:'セバスチャン',
+    text:'では、ごゆるりとお休みくださいませ。<br>……もし、何ぞございましたら、扉をお叩きください。私は、どこにでもおりますゆえ。',
+    next:'s1_post2'
+  },
+  s1_post2:{
+    bg:IMG.hall,
+    character:null,
+    speaker:'',
+    text:'<span class="narration">扉が、すうと閉まる。<br>その音すら、彼の所作と同じくらい静かだった。</span>',
+    next:'s1_post3'
+  },
+  s1_post3:{
+    bg:IMG.hall,
+    speaker:'',
+    text:'<span class="narration">天蓋の絹は色褪せ、暖炉の薪は赤く燃えていた。<br>誰がこの火を熾したのか――この館にいるのは、たった一人の執事だけだというのに。</span>',
+    next:'s1_post4'
+  },
+  s1_post4:{
+    bg:IMG.hall,
+    speaker:'',
+    effect:'heartbeat-start',
+    text:'<span class="narration">ベッドに身を沈めると、心臓が、まだ妙な律動を刻んでいた。<br>(……あの瞳を、思い出してはいけない)<br>そう言い聞かせるほど、瞼の裏に、夜の海が広がる。</span>',
     next:'s1_end'
   },
   s1_end:{
     bg:IMG.hall,
     character:null,
     speaker:'',
+    effect:'heartbeat-stop',
     bgm:'bgm1',
     text:'<span class="narration">こうして、薔薇館での最初の夜が始まった――。</span>',
     next:'chapter2_intro'
