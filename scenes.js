@@ -731,13 +731,52 @@ const SCENES = {
     speaker:'',
     bgm:'bgm2',
     text:'<span class="narration">― 第四章 西の塔の真実 ―</span>',
+    next:'s4_pre1'
+  },
+  s4_pre1:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">月が、館の塔よりも高く昇った。<br>窓の外、銀の月光が霧を切り裂き、薔薇園の深紅を、奇妙な色彩のない深紅へと変えていた。</span>',
+    next:'s4_pre2'
+  },
+  s4_pre2:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">部屋の扉が、三度、静かにノックされる。<br>――迎えに来た、と告げる声は、紛れもなく、彼のものだった。</span>',
+    next:'s4_pre3'
+  },
+  s4_pre3:{
+    bg:IMG.corridor,
+    character:IMG.bowing,
+    effect:'character-show',
+    speaker:'セバスチャン',
+    text:'お嬢様。<br>……お覚悟は、定まりましたか。',
+    next:'s4_pre4'
+  },
+  s4_pre4:{
+    character:IMG.bowing,
+    speaker:'',
+    text:'<span class="narration">頷く。それしか、できなかった。<br>燭台を受け取る指先は、すでに冷たかった。</span>',
     next:'s4_1'
   },
   s4_1:{
     bg:IMG.corridor,
+    character:null,
     speaker:'',
     text:'<span class="narration">禁忌の塔。鉄錆びた螺旋階段を、セバスチャンは無言で先導する。<br>一段ごとに、心臓が竪琴のように鳴った。</span>',
     effect:'heartbeat-start',
+    next:'s4_1b'
+  },
+  s4_1b:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">登っても、登っても、塔は終わらない。<br>外から見上げたとき、あの塔は、確かにこんなに高くはなかったはずだ。<br>(……時間が、引き延ばされている)</span>',
+    next:'s4_1c'
+  },
+  s4_1c:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">壁に等間隔で掛けられた肖像画は、すべて、同じ顔をしていた。<br>すべて――セバスチャンの顔。<br>名は、すべて違っていた。</span>',
     next:'s4_2'
   },
   s4_2:{
@@ -746,6 +785,12 @@ const SCENES = {
     effect:'character-show',
     speaker:'セバスチャン',
     text:'……ここから先は、私の故郷でございます。<br>お嬢様。最後にもう一度、お聞きします。',
+    next:'s4_2b'
+  },
+  s4_2b:{
+    character:IMG.bowing,
+    speaker:'',
+    text:'<span class="narration">故郷、と。<br>振り返った彼の表情は、燭光に揺らいで、初めて、執事の仮面を外したように見えた。</span>',
     next:'s4_3'
   },
   s4_3:{
@@ -769,18 +814,24 @@ const SCENES = {
     effect:'flash',
     speaker:'セバスチャン',
     text:'……お嬢様は、どこまで、私を……。<br>(初めて、彼の声が崩れた)',
-    next:'s4_4'
+    next:'s4_a_join'
   },
   s4_a2:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'お嬢様。<br>……私は、この館を出ることが、できないのです。',
-    next:'s4_4'
+    next:'s4_a_join'
   },
   s4_a3:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'……それが、賢明でございます。<br>けれど、最後にこれだけは、お話しさせてください。',
+    next:'s4_a_join'
+  },
+  s4_a_join:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……階段の途中ではございますが、ここで、すべてをお話し致します。<br>これより先は、覚悟なしには、お入れすることはできません。',
     next:'s4_4'
   },
   s4_4:{
@@ -788,6 +839,12 @@ const SCENES = {
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'西の塔に眠るのは――<br>呪いを受け、姿を保てなくなった、現当主。<br>すなわち、私自身の影でございます。',
+    next:'s4_4b'
+  },
+  s4_4b:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'いえ、影、というのは比喩ではございません。<br>文字通り、呪いによって、私の半身が、別の肉体として塔に閉じ込められているのです。',
     next:'s4_5'
   },
   s4_5:{
@@ -795,12 +852,42 @@ const SCENES = {
     effect:'shake heartbeat-start',
     speaker:'セバスチャン',
     text:'私は、ヴァルディア家の血を継ぐ者。<br>呪いにより、半身は人として、半身は獣として、この館に縛られております。',
+    next:'s4_5b'
+  },
+  s4_5b:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'呪いをかけたのは――百年前、初代当主の妹君に懸想し、結ばれずに館を呪って自刃した、若い庭師。<br>「ヴァルディアの血を引く者と、真実の愛で結ばれぬかぎり、当主は永遠に、半身として彷徨え」と。',
+    next:'s4_5c'
+  },
+  s4_5c:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'歴代の当主たちは、皆、呪いを解こうとして失敗してまいりました。<br>愛が偽りであれば、選んだ娘の命を奪い、当主自身は、また、塔の中で半身を取り戻せぬまま、何十年も眠るのです。',
     next:'s4_6'
   },
   s4_6:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'執事を演じてきたのは、客人を欺き、自らの正体を隠すため。<br>……お嬢様を、お招きしたのも、本当は。',
+    next:'s4_6b'
+  },
+  s4_6b:{
+    character:IMG.closeup,
+    speaker:'',
+    text:'<span class="narration">――母を、知っていた、という告白の意味が、ようやく繋がった。<br>母も、若き日、この呪いを解くために、この館に呼ばれていたのだろうか。</span>',
+    next:'s4_6c'
+  },
+  s4_6c:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'お嬢様のお母様も、かつて、この館に招かれた一人でございました。<br>けれど、彼女は、この呪いを解くことを選ばず、ただ、館を捨てて、外の世で愛する人と生きる道を選ばれた。',
+    next:'s4_6d'
+  },
+  s4_6d:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……それを、私は、誇りに思っておりました。<br>けれど、その娘である、あなたを、結局、この館は呼び寄せてしまった。',
     next:'s4_7'
   },
   s4_7:{
@@ -808,6 +895,12 @@ const SCENES = {
     effect:'flash',
     speaker:'セバスチャン',
     text:'呪いを解く鍵は、ヴァルディアの血を引く者の、真実の愛だと――そう、伝えられているのです。',
+    next:'s4_7b'
+  },
+  s4_7b:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'真実の愛が成就すれば、呪いは解け、私は完全な人間となれます。<br>けれど、もし偽りであれば――娘の命が代償となり、私はまた、半身のまま、何十年も塔に閉じ込められる。',
     next:'s4_choice2'
   },
   s4_choice2:{
@@ -826,26 +919,32 @@ const SCENES = {
     effect:'flash heartbeat-stop',
     speaker:'セバスチャン',
     text:'……お嬢様。<br>(初めて、彼は跪き、あなたの手の甲に唇を寄せた)<br>あなたという、人は……。',
-    next:'s4_end'
+    next:'s4_b_join'
   },
   s4_b2:{
     character:IMG.closeup,
     effect:'heartbeat-stop',
     speaker:'セバスチャン',
     text:'……それは、命の懸かる賭けです。<br>本当に、よろしいのですか。',
-    next:'s4_end'
+    next:'s4_b_join'
   },
   s4_b3:{
     character:IMG.closeup,
     speaker:'セバスチャン',
     text:'……ええ。仰る通りでございます。<br>けれど、私は、あなたを愛してしまった。<br>本当に、ひどい男でございます。',
-    next:'s4_end'
+    next:'s4_b_join'
   },
   s4_b4:{
     character:IMG.closeup,
     effect:'shake',
     speaker:'セバスチャン',
     text:'……当然の、お言葉です。<br>明朝、馬車をご用意致します。<br>どうか、二度と、この館を思い出さないでくださいませ。',
+    next:'s4_b_join'
+  },
+  s4_b_join:{
+    character:IMG.closeup,
+    speaker:'セバスチャン',
+    text:'……それでも、お嬢様。<br>最後の決断は、塔の最上階で、もう一度、お聞きしましょう。<br>言葉ではなく、あなたの心が、答えを出すべきだ。',
     next:'s4_end'
   },
   s4_end:{
@@ -854,6 +953,12 @@ const SCENES = {
     speaker:'',
     text:'<span class="narration">塔の最上階。<br>月光に照らされて、その扉は、静かにあなたを待っていた。</span>',
     effect:'heartbeat-stop',
+    next:'s4_end2'
+  },
+  s4_end2:{
+    bg:IMG.corridor,
+    speaker:'',
+    text:'<span class="narration">扉の前で、彼は、燭台をあなたに手渡した。<br>ここから先、彼は導くことができないという。<br>呪いを解く儀は、館の血を引く者ひとりが、扉を押し開けて始めるものなのだと。</span>',
     next:'chapter5_intro'
   },
 
