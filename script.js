@@ -658,9 +658,10 @@ document.head.appendChild(floatStyle);
 function applyEffects(effect){
   // shake
   if(/shake/.test(effect)){
-    $character.classList.remove('shake');
-    void $character.offsetWidth;
-    $character.classList.add('shake');
+    const shakeTarget = $character.classList.contains('show') ? $character : $bg;
+    shakeTarget.classList.remove('shake');
+    void shakeTarget.offsetWidth;
+    shakeTarget.classList.add('shake');
   }
   // flash
   if(/flash/.test(effect)){
