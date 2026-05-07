@@ -416,7 +416,7 @@ const SCENES = {
     character:null,
     effect:'heartbeat-stop',
     speaker:'セバスチャン',
-    text:'……お一人でしたか。<br>申し訳ございません。私の不徳の致すところで。',
+    text:'……怖い思いをさせてしまいましたね。<br>申し訳ございません。私の不徳の致すところで。',
     next:'s2_a_join'
   },
   s2_a2:{
@@ -792,7 +792,7 @@ const SCENES = {
     bg:IMG.clock_stopped,
     character:null,
     speaker:'セバスチャン',
-    text:'お嬢様。<br>……お母様は、若かりし日、よくこの庭で薔薇を摘まれておいででした。<br>祖父である伯爵様の妹君として、生まれ育ったこの館で。',
+    text:'お嬢様。<br>……お母様は、若かりし日、よくこの庭で薔薇を摘まれておいででした。<br>ヴァルディア伯爵家の血を引く娘として、この館に深く結ばれていた方でございます。',
     next:'s3_b_join2'
   },
   s3_b_join2:{
@@ -813,7 +813,7 @@ const SCENES = {
     bg:IMG.clock_stopped,
     character:null,
     speaker:'セバスチャン',
-    text:'伯爵様は、行方不明ではございません。<br>……西の塔に、おわします。',
+    text:'行方不明とされている伯爵様は、外の世に消えたのではございません。<br>……西の塔に、おわします。',
     effect:'heartbeat-stop',
     next:'s3_7b'
   },
@@ -961,7 +961,7 @@ const SCENES = {
     bg:IMG.stair_truth_telling,
     character:null,
     speaker:'セバスチャン',
-    text:'……それが、賢明でございます。<br>けれど、最後にこれだけは、お話しさせてください。',
+    text:'……それが、賢明でございます。<br>では、お戻りになる前に、ひとつだけ。<br>お嬢様が二度とこの扉へ近づかずに済むよう、理由だけはお聞きください。',
     next:'s4_a_join'
   },
   s4_a_join:{
@@ -975,7 +975,7 @@ const SCENES = {
     bg:IMG.stair_truth_telling,
     character:null,
     speaker:'セバスチャン',
-    text:'西の塔に眠るのは――<br>呪いを受け、姿を保てなくなった、現当主。<br>すなわち、私自身の影でございます。',
+    text:'西の塔に眠るのは――<br>呪いを受け、姿を保てなくなった、現当主。<br>その方こそ、私の、眠れる半身でございます。',
     next:'s4_4b'
   },
   s4_4b:{
@@ -990,7 +990,7 @@ const SCENES = {
     character:null,
     effect:'shake heartbeat-start',
     speaker:'セバスチャン',
-    text:'私は、ヴァルディア家の血を継ぐ者。<br>呪いにより、半身は人として、半身は獣として、この館に縛られております。',
+    text:'私は、ヴァルディア家の血を継ぐ者。<br>呪いにより、半身は影として館を歩き、半身は肉体のまま塔に縛られております。',
     next:'s4_5b'
   },
   s4_5b:{
@@ -1091,7 +1091,7 @@ const SCENES = {
     character:null,
     effect:'shake',
     speaker:'セバスチャン',
-    text:'……当然の、お言葉です。<br>明朝、馬車をご用意致します。<br>どうか、二度と、この館を思い出さないでくださいませ。',
+    text:'……当然の、お言葉です。<br>明朝、馬車をご用意することもできます。<br>けれど今夜だけは、どうか最後の扉の前まで、お付き合いくださいませ。',
     next:'s4_b_join'
   },
   s4_b_join:{
@@ -1247,7 +1247,7 @@ const SCENES = {
     bg:IMG.pocketwatch_reveal,
     character:null,
     speaker:'',
-    text:'<span class="narration">そう、これは父の形見ではなかった。<br>父が、嫁いできた母から預かり、わたしを引き取ってくれた弁護士に託したもの。<br>母は、最後まで、館に何かを残していた。</span>',
+    text:'<span class="narration">そう、これは父の形見ではなかった。<br>母が嫁ぐとき、父に託したもの。<br>そして父の死後、わたしを引き取る手続きをした弁護士の手から、形見として渡されたもの。<br>母は、最後まで、館に何かを残していた。</span>',
     next:'s5_9'
   },
   s5_9:{
@@ -1305,7 +1305,7 @@ const SCENES = {
     bg:IMG.moonlit_pair_choice,
     character:null,
     speaker:'',
-    text:'<span class="narration">五十年、館を護ってきた執事の影。<br>百年、茨に縛られ眠ってきた、傷ついた半身。<br>その両方を、わたしは、もう、知っていた。</span>',
+    text:'<span class="narration">五十年、館を護ってきた執事の影。<br>同じ五十年、茨に縛られ眠ってきた、傷ついた半身。<br>その両方を、わたしは、もう、知っていた。</span>',
     next:'s5_17'
   },
   s5_17:{
