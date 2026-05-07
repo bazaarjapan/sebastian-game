@@ -4,13 +4,14 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>セバスチャン ―真夜中の薔薇館―</title>
+<link rel="icon" type="image/png" href="favicon.png" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <!-- ========== OPENING MOVIE ========== -->
 <section id="opening" class="screen active">
-  <video id="openingVideo" playsinline preload="metadata">
+  <video id="openingVideo" playsinline preload="none">
     <source src="movie/movie.mp4" type="video/mp4" />
   </video>
   <button id="skipBtn" class="skip-btn">SKIP ▸▸</button>
@@ -19,7 +20,7 @@
 
 <!-- ========== TITLE SCREEN ========== -->
 <section id="title" class="screen">
-  <div class="title-bg" style="background-image:url('images/image1.png')"></div>
+  <div class="title-bg" data-bg="images/gate_butler.webp"></div>
   <div class="title-overlay"></div>
   <div class="title-inner">
     <h1 class="game-title">
@@ -117,7 +118,7 @@
 
 <!-- ========== CREDITS ========== -->
 <section id="credits" class="screen">
-  <div class="credits-bg" style="background-image:url('images/image5.png')"></div>
+  <div class="credits-bg" data-bg="images/end_normal_bell.webp"></div>
   <div class="title-overlay"></div>
   <div class="credits-inner">
     <h2>― CREDITS ―</h2>
@@ -133,12 +134,12 @@
 <!-- ========== BGM ========== -->
 <!-- preload=metadata: fetch only header info on load. The actual file is
      downloaded lazily when Music.play() is first called for the track. -->
-<audio id="bgm1" src="bgm/セバスチャンの日常.mp3" loop preload="metadata"></audio>
-<audio id="bgm2" src="bgm/セバスチャンの影.mp3" loop preload="metadata"></audio>
-<audio id="bgm3" src="bgm/真実のくちづけ.mp3" loop preload="metadata"></audio>
-<audio id="bgm4" src="bgm/黒薔薇の墓標.mp3" loop preload="metadata"></audio>
-<audio id="bgm5" src="bgm/執事セバスチャンのテーマ（オーケストラ）.mp3" loop preload="metadata"></audio>
-<audio id="bgm6" src="bgm/執事セバスチャンのテーマ（ピアノ）.mp3" loop preload="metadata"></audio>
+<audio id="bgm1" src="bgm/セバスチャンの日常.mp3" loop preload="none"></audio>
+<audio id="bgm2" src="bgm/セバスチャンの影.mp3" loop preload="none"></audio>
+<audio id="bgm3" src="bgm/真実のくちづけ.mp3" loop preload="none"></audio>
+<audio id="bgm4" src="bgm/黒薔薇の墓標.mp3" loop preload="none"></audio>
+<audio id="bgm5" src="bgm/執事セバスチャンのテーマ（オーケストラ）.mp3" loop preload="none"></audio>
+<audio id="bgm6" src="bgm/執事セバスチャンのテーマ（ピアノ）.mp3" loop preload="none"></audio>
 
 <!-- Floating mute button (only visible on title/credits/ending screens) -->
 <button id="muteBtn" class="mute-btn-floating" title="BGM ON/OFF">♪</button>

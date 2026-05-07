@@ -22,7 +22,7 @@ const ENDINGS = {
   true:{
     title:'TRUE END',
     sub:'― 永遠の薔薇 ―',
-    bg:IMG.gloves,
+    bg:IMG.end_true_roses,
     bgm:'bgm3',
     text:`月光の中、二人の唇が触れた瞬間――茨は薔薇となり、塔を覆い尽くした。<br><br>
 "お嬢様。いえ……愛しい人よ。<br>
@@ -33,7 +33,7 @@ const ENDINGS = {
   normal:{
     title:'NORMAL END',
     sub:'― 半身の絆 ―',
-    bg:IMG.bowing,
+    bg:IMG.end_normal_bell,
     bgm:'bgm1',
     text:`呪いは半分だけ解け、セバスチャンは「半身」のまま、館に留まることを選んだ。<br><br>
 "私と共に、この館で生きてくださいますか。<br>
@@ -45,7 +45,7 @@ const ENDINGS = {
   bitter:{
     title:'BITTERSWEET END',
     sub:'― 別離の手袋 ―',
-    bg:IMG.corridor,
+    bg:IMG.end_bitter_carriage_glove,
     bgm:'bgm4',
     text:`あなたは口づけることができなかった。<br>
 セバスチャンは静かに微笑み、白手袋を差し出した。<br><br>
@@ -57,7 +57,7 @@ const ENDINGS = {
   bad:{
     title:'BAD END',
     sub:'― 鏡の中の薔薇 ―',
-    bg:IMG.closeup,
+    bg:IMG.end_bad_black_rose_ash,
     bgm:'bgm4',
     text:`塔の扉が、音もなく閉じた。<br>
 振り返ったとき、そこにはもう、誰もいなかった。<br><br>
@@ -73,7 +73,7 @@ const ENDINGS = {
    ============================================================ */
 const Music = (()=>{
   const tracks = {};
-  let current = null;       // 'bgm1' | 'bgm2' | null
+  let current = null;       // 'bgm1'...'bgm6' | null
   let muted   = localStorage.getItem('sebastian_muted') === '1';
   const TARGET_VOLUME = 0.55;
   const FADE_MS = 1200;
@@ -260,6 +260,7 @@ function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const el = document.getElementById(id);
   el.classList.add('active');
+  applyDeferredBackgrounds(el);
   el.classList.remove('fade-in');
   void el.offsetWidth; // restart animation
   el.classList.add('fade-in');
@@ -271,6 +272,14 @@ function showScreen(id){
     if(id === 'game') floatBtn.classList.remove('show');
     else floatBtn.classList.add('show');
   }
+}
+
+function applyDeferredBackgrounds(root){
+  root.querySelectorAll('[data-bg]').forEach(el=>{
+    if(el.dataset.loadedBg === el.dataset.bg) return;
+    el.style.backgroundImage = `url('${el.dataset.bg}')`;
+    el.dataset.loadedBg = el.dataset.bg;
+  });
 }
 
 /* ============================================================
@@ -649,9 +658,10 @@ document.head.appendChild(floatStyle);
 function applyEffects(effect){
   // shake
   if(/shake/.test(effect)){
-    $character.classList.remove('shake');
-    void $character.offsetWidth;
-    $character.classList.add('shake');
+    const shakeTarget = $character.classList.contains('show') ? $character : $bg;
+    shakeTarget.classList.remove('shake');
+    void shakeTarget.offsetWidth;
+    shakeTarget.classList.add('shake');
   }
   // flash
   if(/flash/.test(effect)){

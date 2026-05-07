@@ -8,7 +8,7 @@
 
 霧深い断崖の上に建つ「ヴァルディア伯爵邸」を舞台にした、Gothic / Victorian 調の恋愛シミュレーションゲーム。執事セバスチャンとの**はらはらどきどきの5章+4分岐エンディング**を体験できるブラウザゲームです。
 
-![title](images/image1.png)
+![title](images/gate_butler.webp)
 
 ---
 
@@ -113,7 +113,7 @@ MIT License — 詳細は [LICENSE](./LICENSE) を参照。
 
 ただし以下のアセットは別管理です:
 
-- `images/*.png` — ゲーム用キャラクターイラスト・背景
+- `images/*.webp` — ゲーム用キャラクターイラスト・背景
 - `movie/movie.mp4` — オープニング映像
 - `bgm/*.mp3` — BGM
 

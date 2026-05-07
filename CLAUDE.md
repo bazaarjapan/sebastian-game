@@ -59,7 +59,7 @@ Per-scene fields supported by `renderScene()`:
 - `speaker` — name plate text
 - `text` — dialogue HTML, supports `<span class="narration">` for italicized prose
 - `effect` — space-separated tokens: `shake`, `flash`, `heartbeat-start`, `heartbeat-stop`, `character-show`
-- `bgm` — `'bgm1'` (calm) or `'bgm2'` (tense); only present on scenes that should *change* the track. Otherwise the current track keeps playing across many scenes.
+- `bgm` — one of the six logical BGM ids (`bgm1`〜`bgm6`); only present on scenes that should *change* the track. Otherwise the current track keeps playing across many scenes. Main-story scenes use `bgm1`〜`bgm4`; title/credits use `bgm5`/`bgm6`.
 - `chapter` — sets the displayed chapter number; only set on chapter intros
 
 When adding scenes, **don't tag every node with `bgm`** — only the ones where the music should switch. The current track persists across un-tagged scenes.
@@ -68,7 +68,7 @@ When adding scenes, **don't tag every node with `bgm`** — only the ones where 
 
 State is global (`const State = {...}`), not encapsulated. The engine is built around three IIFE modules:
 
-- **`Music`** — manages two `<audio>` elements with crossfade via `setInterval`. Persists mute state in `localStorage['sebastian_muted']`. Shares mute state with `Sfx`.
+- **`Music`** — manages the six `<audio>` elements with crossfade via `setInterval`. Persists mute state in `localStorage['sebastian_muted']`. Shares mute state with `Sfx`.
 - **`Sfx`** — synthesizes UI sounds via Web Audio API (no audio files). Three sounds: `tick()` (per-character typewriter), `choose()` (choice click), `heart()` (positive affection). All return early if `Music.isMuted()`.
 - The typewriter (`typeText` in `script.js`) builds a DOM skeleton mirroring the HTML structure of `text`, then progressively fills text nodes character-by-character. This is how it can both animate plain characters AND preserve inline tags like `<span class="narration">` and `<br>`.
 
