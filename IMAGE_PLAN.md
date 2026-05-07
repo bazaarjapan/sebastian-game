@@ -26,14 +26,16 @@ Japanese visual novel illustration, gothic Victorian setting, painterly digital 
 
 ### 2.1 セバスチャン (執事)
 
+- **参照画像:** `images/sebastian_reference_sheet.webp` を以後の主要見本とする。漫画カットと設定資料集を兼ねた基準画像で、顔立ち・髪型・衣装・白手袋・画風の固定参照に使う。
 - **容姿:** 細身長身、外見年齢 20 代後半。漆黒のセミロング (一部を黒のシルクリボンで結ぶ)。深いインディゴブルーの瞳。極めて白い肌
 - **服装:** 黒のテイルコート (高い襟)、白のシャツ、黒のシルク・クラヴァット、白手袋、黒のトラウザーズ、磨かれた革靴
 - **所作:** 姿勢は常に完璧。穏やかだが憂いを帯びた表情
 
-各 Prompt 内では `tall slender butler in black tailcoat with white gloves, raven shoulder-length hair partly tied back with black silk ribbon, deep indigo eyes, fair skin` のように描写する。
+各 Prompt 内では、`images/sebastian_reference_sheet.webp` を参照したうえで `same Sebastian as the reference sheet: tall slender young Victorian butler in embroidered black tailcoat with immaculate white gloves, wavy medium-length raven-black hair, pale refined skin, sharp calm light gray-hazel to deep indigo eyes, white silk cravat` のように描写する。
 
 ### 2.2 主人公 (お嬢様)
 
+- **参照画像:** `images/heroine_reference_sheet.webp` を以後の主要見本とする。主人公はプレイヤー投影を優先するため、髪型・服装・後ろ姿・横顔・手元を固定し、正面顔や目元の詳細は固定しない。
 - **容姿:** 10 代後半〜20 代前半の女性。ミディアムレングスの髪
 - **服装:** ヴィクトリアン様式の旅装 (ディープブルーまたはバーガンディのベルベット、レース襟)
 - **構図ルール:** **常に後ろ姿、プロフィール、または顔を部分的に隠した構図** で描く。**正面顔・目元の細部は描かない**
@@ -46,7 +48,7 @@ Japanese visual novel illustration, gothic Victorian setting, painterly digital 
 
 各画像エントリは:
 
-- **キー** (`carriage_window` のような短い識別子) — `images/<key>.png` として保存
+- **キー** (`carriage_window` のような短い識別子) — `images/<key>.webp` として保存
 - **役割** (一行説明)
 - **使用予定シーン** (scenes.js の ID リスト)
 - **Prompt** (`[STYLE]. <scene description>` 形式、生成時は `[STYLE]` を § 1 のブロックに置き換え)
@@ -315,7 +317,7 @@ Japanese visual novel illustration, gothic Victorian setting, painterly digital 
 **役割:** 母の懐中時計の紋章  
 **使用シーン:** `s5_5`, `s5_6`, `s5_7`, `s5_8`
 **Prompt:**
-> [STYLE]. Extreme close-up of a small silver pocket watch held cradled in a pale young woman's bare palm, the watch open showing an aged ivory face with elegant hands stopped, the back of the watch case engraved deeply with a perfectly clear Valdia rose-and-thorns crest, the engraving once worn now visible under direct moonlight from above, in the background blurry suggestion of the marble bier, sacred reveal.
+> [STYLE]. Extreme close-up of a small antique silver pocket watch held cradled in a pale young woman's bare palm, **the pocket watch closed, not open**, its worn outer lid/back case engraved with a rubbed-down Valdia rose-and-thorns crest that becomes recognizable only under direct moonlight from above, no clock face visible, in the background blurry suggestion of the marble bier, sacred reveal.
 
 ### 8.7 `last_letter`
 **役割:** 母の最後の手紙  
@@ -381,13 +383,13 @@ Japanese visual novel illustration, gothic Victorian setting, painterly digital 
 
 50 枚すべて生成・配置されたあと、以下を別 Issue として実装する:
 
-1. `images/<key>.png` (約 50 ファイル) を配置
+1. `images/<key>.webp` (約 50 ファイル) を配置
 2. `scenes.js` の `IMG` マップを 50+ キーに置き換え (旧 5 キー `hall`/`corridor`/`closeup`/`gloves`/`bowing` も新キーへ統合または削除)
 3. `scenes.js` の各シーン `bg` / `character` 参照を新 IMG キーへ書き換え (約 166 箇所)
 4. `index.html` のタイトル背景 (現行 `image1.png`) を新キーへ差し替え
 5. `index.html` のクレジット背景 (現行 `image5.png`) を新キーへ差し替え
 6. `script.js` の `ENDINGS[*].bg` を新キーへ差し替え (4 箇所)
-7. 不要になった旧 `images/image1.png` 〜 `images/image5.png` を削除
+7. 不要になった旧 `images/image1.webp` 〜 `images/image5.webp` を削除
 8. `BUILD_GUIDE.md` のアセット表を 50 枚構成に追従
 9. ブラウザで全シーン・全エンディング踏破して画像が正しく差し替わっていることを確認
 
