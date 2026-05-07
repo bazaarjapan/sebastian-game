@@ -386,10 +386,10 @@ Japanese visual novel illustration, gothic Victorian setting, painterly digital 
 1. `images/<key>.webp` (約 50 ファイル) を配置
 2. `scenes.js` の `IMG` マップを 50+ キーに置き換え (旧 5 キー `hall`/`corridor`/`closeup`/`gloves`/`bowing` も新キーへ統合または削除)
 3. `scenes.js` の各シーン `bg` / `character` 参照を新 IMG キーへ書き換え (約 166 箇所)
-4. `index.html` のタイトル背景 (現行 `image1.png`) を新キーへ差し替え
-5. `index.html` のクレジット背景 (現行 `image5.png`) を新キーへ差し替え
+4. `index.html` のタイトル背景を `images/gate_butler.webp` に差し替え済み
+5. `index.html` のクレジット背景を `images/end_normal_bell.webp` に差し替え済み
 6. `script.js` の `ENDINGS[*].bg` を新キーへ差し替え (4 箇所)
-7. 不要になった旧 `images/image1.webp` 〜 `images/image5.webp` を削除
+7. 不要になった旧サンプル画像を削除済み
 8. `BUILD_GUIDE.md` のアセット表を 50 枚構成に追従
 9. ブラウザで全シーン・全エンディング踏破して画像が正しく差し替わっていることを確認
 

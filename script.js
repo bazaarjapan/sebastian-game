@@ -260,6 +260,7 @@ function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   const el = document.getElementById(id);
   el.classList.add('active');
+  applyDeferredBackgrounds(el);
   el.classList.remove('fade-in');
   void el.offsetWidth; // restart animation
   el.classList.add('fade-in');
@@ -271,6 +272,14 @@ function showScreen(id){
     if(id === 'game') floatBtn.classList.remove('show');
     else floatBtn.classList.add('show');
   }
+}
+
+function applyDeferredBackgrounds(root){
+  root.querySelectorAll('[data-bg]').forEach(el=>{
+    if(el.dataset.loadedBg === el.dataset.bg) return;
+    el.style.backgroundImage = `url('${el.dataset.bg}')`;
+    el.dataset.loadedBg = el.dataset.bg;
+  });
 }
 
 /* ============================================================

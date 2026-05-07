@@ -4,12 +4,6 @@
    ============================================================ */
 
 const IMG = {
-  hall:    'images/image3.webp',  // 大広間・階段
-  corridor:'images/image1.webp',  // 暗い廊下
-  closeup: 'images/image2.webp',  // 顔のクローズアップ
-  gloves:  'images/image4.webp',  // 白手袋を整える
-  bowing:  'images/image5.webp',  // 礼をする
-
   // Chapter 1 generated scene art
   carriage_window:    'images/carriage_window.webp',
   manor_storm:        'images/manor_storm.webp',
